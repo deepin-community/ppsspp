@@ -4,8 +4,6 @@ export DEB_LDFLAGS_MAINT_APPEND=-Wl,--as-needed
 
 export DEB_BUILD_OPTIONS=nocheck
 
-export QT_SELECT := qt5
-
 ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 ifeq ($(ARCH), armhf)
@@ -58,31 +56,20 @@ else ifeq ($(ARCH), mips64el)
 else
 	@echo "Unknown ARCH: $(ARCH)"
 endif
-	dh_auto_configure $@ --builddirectory=obj_qt -- $(GLES_ENABLE) $(COMMON_FLAGS) -DUSING_QT_UI=ON
 	dh_auto_configure $@ --builddirectory=obj_sdl -- $(GLES_ENABLE) $(COMMON_FLAGS)
-	dh_auto_configure $@ --builddirectory=obj_libretro -- $(GLES_ENABLE) $(COMMON_FLAGS) -DLIBRETRO=ON
 
 override_dh_auto_build:
-	dh_auto_build $@ --builddirectory=obj_qt
 	dh_auto_build $@ --builddirectory=obj_sdl
-	dh_auto_build $@ --builddirectory=obj_libretro
 
 override_dh_auto_install:
-	dh_auto_install $@ --builddirectory=obj_qt
 	dh_auto_install $@ --builddirectory=obj_sdl
-#	dh_auto_install $@ --builddirectory=obj_libretro
 
 #override_dh_auto_test:
-#	dh_auto_test $@ --builddirectory=obj_qt
 #	dh_auto_test $@ --builddirectory=obj_sdl
-#	dh_auto_test $@ --builddirectory=obj_libretro
 
 override_dh_auto_clean:
-	dh_auto_clean $@ --builddirectory=obj_qt
 	dh_auto_clean $@ --builddirectory=obj_sdl
-	dh_auto_clean $@ --builddirectory=obj_libretro
 
 #override_dh_strip:
 #	dh_strip -pppsspp --dbg-package=ppsspp-dbg
 #	dh_strip -pppsspp-sdl --dbg-package=ppsspp-sdl-dbg
-#	dh_strip -pppsspp-libretro --dbg-package=ppsspp-libretro-dbg

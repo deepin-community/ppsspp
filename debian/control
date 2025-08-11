@@ -10,7 +10,6 @@ Build-Depends: debhelper (>= 12),
                libglew-dev,
                libminiupnpc-dev,
                libpng-dev (>= 1.6) [i386 amd64],
-               libqt5opengl5-dev,
                libsdl2-dev,
                libsnappy-dev,
                libvulkan-dev,
@@ -18,43 +17,11 @@ Build-Depends: debhelper (>= 12),
                libzip-dev,
                libzstd-dev,
                python3,
-               qtbase5-dev,
-               qtmultimedia5-dev,
                zlib1g-dev
 Standards-Version: 4.0.0
 Homepage: http://www.ppsspp.org
 
 Package: ppsspp
-Architecture: any
-Depends: ppsspp-common (= ${source:Version}), ${misc:Depends}, ${shlibs:Depends}
-Replaces: ppsspp-qt (<< 1.0.1+r87.f4.p3.l1620.a161.t83~)
-Breaks: ppsspp-qt (<< 1.0.1+r87.f4.p3.l1620.a161.t83~)
-Description: Sony PSP emulator
- PPSSPP can run your PSP games on your PC in full HD resolution. It can even
- upscale textures that would otherwise be too blurry as they were made for
- the small screen of the original PSP.
- .
- All trademarks are property of their respective owners. The emulator is for
- educational and development purposes only and it may not be used to play games
- you do not legally own.
-
-#Package: ppsspp-dbg
-#Section: debug
-#Priority: extra
-#Architecture: any
-#Depends: ppsspp (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
-#Description: Sony PSP emulator debug symbols
-# PPSSPP can run your PSP games on your PC in full HD resolution. It can even
-# upscale textures that would otherwise be too blurry as they were made for
-# the small screen of the original PSP.
-# .
-# This package provides the debug files for the PPSSPP.
-# .
-# All trademarks are property of their respective owners. The emulator is for
-# educational and development purposes only and it may not be used to play games
-# you do not legally own.
-
-Package: ppsspp-sdl
 Architecture: any
 Depends: ppsspp-common (= ${source:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: Sony PSP emulator - SDL version
@@ -68,36 +35,6 @@ Description: Sony PSP emulator - SDL version
  .
  This package provides the SDL port which relies in less dependencies,
  such as Qt libraries.
-
-#Package: ppsspp-sdl-dbg
-#Section: debug
-#Priority: extra
-#Architecture: any
-#Depends: ppsspp-sdl (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-#Description: Sony PSP emulator - SDL version debug symbols
-# PPSSPP can run your PSP games on your PC in full HD resolution. It can even 
-# upscale textures that would otherwise be too blurry as they were made for 
-# the small screen of the original PSP.
-# .
-# This package provides the debug symbols of the SDL port.
-# .
-# All trademarks are property of their respective owners. The emulator is for 
-# educational and development purposes only and it may not be used to play games
-# you do not legally own.
-
-Package: ppsspp-libretro
-Architecture: any
-Depends: ppsspp-common (= ${source:Version}), retroarch | libretro-frontend, ${shlibs:Depends}, ${misc:Depends}
-Description: Libretro wrapper for PPSSPP
- PPSSPP can run your PSP games on your PC in full HD resolution. It can even 
- upscale textures that would otherwise be too blurry as they were made for 
- the small screen of the original PSP.
- .
- All trademarks are property of their respective owners. The emulator is for 
- educational and development purposes only and it may not be used to play games
- you do not legally own.
- .
- This package provides the libretro wrapper of PPSSPP.
 
 Package: ppsspp-common
 Architecture: all
@@ -113,10 +50,3 @@ Description: Common files for PPSSPP
  you do not legally own.
  .
  This package provides common files for PPSSPP.
-
-Package: ppsspp-qt
-Architecture: all
-Section: oldlibs
-Depends: ppsspp, ${misc:Depends}
-Description: Transitional package for ppsspp-qt
- This is a transitional dummy package for ppsspp-qt. It can safely be removed.
