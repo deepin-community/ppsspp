@@ -1,3 +1,0 @@
-#!/usr/bin/dh-exec
-obj_libretro/lib/ppsspp_libretro.so  usr/lib/${DEB_HOST_MULTIARCH}/libretro
-debian/ppsspp.libretro  usr/lib/${DEB_HOST_MULTIARCH}/libretro
