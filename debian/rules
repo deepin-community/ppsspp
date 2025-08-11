@@ -49,6 +49,14 @@ else ifeq ($(ARCH), armhf)
 	cd ffmpeg && ./linux_armhf.sh
 else ifeq ($(ARCH), arm64)
 	cd ffmpeg && ./linux_arm64.sh
+else ifeq ($(ARCH), riscv64)
+	cd ffmpeg && ./linux_riscv64.sh
+else ifeq ($(ARCH), loong64)
+	cd ffmpeg && ./linux_loongarch64.sh
+else ifeq ($(ARCH), mips64el)
+	cd ffmpeg && ./linux_mips64.sh
+else
+	@echo "Unknown ARCH: $(ARCH)"
 endif
 	dh_auto_configure $@ --builddirectory=obj_qt -- $(GLES_ENABLE) $(COMMON_FLAGS) -DUSING_QT_UI=ON
 	dh_auto_configure $@ --builddirectory=obj_sdl -- $(GLES_ENABLE) $(COMMON_FLAGS)

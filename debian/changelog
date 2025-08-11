@@ -1,3 +1,9 @@
+ppsspp (1.19.3-1deepin1) unstable; urgency=medium
+
+  * support loongarch64 riscv64 mips64
+
+ -- lhdjply <lhdjply@126.com>  Mon, 11 Aug 2025 11:08:03 +0800
+
 ppsspp (1.19.3-1~25.04~ppa1) plucky; urgency=medium
 
   * New upstream release
