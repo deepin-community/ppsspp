@@ -1,0 +1,20 @@
+--- a/ffmpeg/linux_x86-64.sh	2021-10-19 22:40:58.207740894 +0800
++++ b/ffmpeg/linux_x86-64.sh	2021-10-19 22:41:29.134409481 +0800
+@@ -86,6 +86,7 @@
+     --extra-cflags="-D__STDC_CONSTANT_MACROS -O3" \
+     --enable-zlib \
+     --enable-pic \
++    --disable-inline-asm \
+     --disable-yasm \
+     --disable-everything \
+     ${MODULES} \
+--- a/ffmpeg/linux_x86.sh	2021-10-19 22:40:58.207740894 +0800
++++ b/ffmpeg/linux_x86.sh	2021-10-19 22:41:29.134409481 +0800
+@@ -85,6 +85,7 @@
+     ${GENERAL} \
+     --extra-cflags="-D__STDC_CONSTANT_MACROS -O3" \
+     --enable-zlib \
++    --disable-inline-asm \
+     --disable-yasm \
+     --disable-everything \
+     ${MODULES} \
