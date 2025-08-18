@@ -1,3 +1,10 @@
+ppsspp (1.19.3-0deepin1) unstable; urgency=medium
+
+  * Downgrade to 1.19.3-0deepin1 for deepin versioning.
+  * remove support mips64
+
+ -- lhdjply <lhdjply@126.com>  Mon, 18 Aug 2025 14:57:03 +0800
+
 ppsspp (1.19.3-1deepin1) unstable; urgency=medium
 
   * support loongarch64 riscv64 mips64
